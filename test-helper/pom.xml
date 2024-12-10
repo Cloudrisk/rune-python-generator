@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.regnosys.rosetta.code-generators</groupId>
+        <artifactId>parent</artifactId>
+        <version>0.0.0.main-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>test-helper</artifactId>
+    <packaging>jar</packaging>
+    
+    <name>code-gen-test-helper</name>
+	<description>Test infrastructure for Rosetta code generators</description>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.xtend</groupId>
+                <artifactId>xtend-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>Generate xtend sources</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.basedir}/target/main/generated/xtend</outputDirectory>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>Generate xtend test sources</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                        <configuration>
+                            <testOutputDirectory>${project.basedir}/target/test/generated/xtend</testOutputDirectory>
+                        </configuration>
+                    </execution>
+
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+	        	<groupId>com.regnosys.rosetta</groupId>
+                <artifactId>com.regnosys.rosetta.tests</artifactId>
+                <version>${rosetta.dsl.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.regnosys.rosetta</groupId>
+            <artifactId>com.regnosys.rosetta</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.regnosys.rosetta</groupId>
+            <artifactId>com.regnosys.rosetta.tests</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.xtext</groupId>
+            <artifactId>org.eclipse.xtext.util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.xtext</groupId>
+            <artifactId>org.eclipse.xtext.testing</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.xtend</groupId>
+            <artifactId>org.eclipse.xtend.lib</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>

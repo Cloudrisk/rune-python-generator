@@ -18,3 +18,41 @@ website/.docusaurus
 website/npm-debug.log*
 website/yarn-debug.log*
 website/yarn-error.log*
+
+# java and xtend
+bin/
+target/
+*~
+*.iml
+**/*.classpath
+**/*.project
+**/*.settings
+*.class
+**/src-gen/
+**/xtend-gen/
+# Package files
+*.jar
+
+# python
+.pydevenv
+python/.pydevproject
+*.py[cod]
+__pycache__
+.pytest_cache/
+python_cdm.egg-info
+
+# Log files
+*.log
+
+# misc
+.vscode/
+.checkstyle
+
+# JetBrains IDE
+.idea
+# VisualCode
+.vs
+.vscode/
+# Eclipse
+.settings/
+.metadata/
