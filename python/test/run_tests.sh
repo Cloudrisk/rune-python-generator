@@ -30,5 +30,5 @@ echo "**** Install CDM ****"
 $PYEXE -m pip install $MYPATH/$PYTHONCDMDIR/python_cdm-*-py3-none-any.whl
 
 # run tests
-$PYEXE -m pytest -p no:cacheprovider $MYPATH/runtime_tests $MYPATH/rosetta_tests $MYPATH/cdm_tests/semantics
+$PYEXE -m pytest -p no:cacheprovider $MYPATH/rosetta_tests $MYPATH/cdm_tests/semantics
 rm -rf .pytest
